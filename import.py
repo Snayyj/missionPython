@@ -2,6 +2,7 @@ import requests
 import json
 import unicodedata
 
+# Debloquer les fichiers json sur le site openquizzdb.org
 open_quizz_db_data = (
     ("Animaux", "Les chats", "https://www.kiwime.com/oqdb/files/1050663867/OpenQuizzDB_050/openquizzdb_50.json"),
     ("Cinéma", "Le Roi Lion", "https://www.kiwime.com/oqdb/files/1052827243/OpenQuizzDB_052/openquizzdb_52.json"),
