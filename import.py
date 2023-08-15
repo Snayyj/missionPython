@@ -3,11 +3,11 @@ import json
 import unicodedata
 
 open_quizz_db_data = (
-    ("Animaux", "Les chats", "https://www.kiwime.com/oqdb/files/1050828847/OpenQuizzDB_050/openquizzdb_50.json"),
-    ("Arts", "Musée du Louvre", "https://www.kiwime.com/oqdb/files/1086624389/OpenQuizzDB_086/openquizzdb_86.json"),
-    ("Bande dessinnée", "Tintin", "https://www.kiwime.com/oqdb/files/2124627384/OpenQuizzDB_124/openquizzdb_124.json"),
-    ("Cinéma", "Alien", "https://www.kiwime.com/oqdb/files/3241454997/OpenQuizzDB_241/openquizzdb_241.json"),
-    ("Cinéma", "Star wars", "https://www.kiwime.com/oqdb/files/1090993427/OpenQuizzDB_090/openquizzdb_90.json"),
+    ("Animaux", "Les chats", "https://www.kiwime.com/oqdb/files/1050663867/OpenQuizzDB_050/openquizzdb_50.json"),
+    ("Cinéma", "Le Roi Lion", "https://www.kiwime.com/oqdb/files/1052827243/OpenQuizzDB_052/openquizzdb_52.json"),
+    ("Informatique", "Android", "https://www.kiwime.com/oqdb/files/3293879243/OpenQuizzDB_293/openquizzdb_293.json"),
+    ("Science", "Le corps humain", "https://www.kiwime.com/oqdb/files/2118827846/OpenQuizzDB_118/openquizzdb_118.json"),
+    ("Pays du monde", "Le Japon", "https://www.kiwime.com/oqdb/files/1091646987/OpenQuizzDB_091/openquizzdb_91.json"),
 )
 
 
