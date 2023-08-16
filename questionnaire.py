@@ -1,3 +1,4 @@
+import json
 # PROJET QUESTIONNAIRE V3 : POO
 #
 # - Pratiquer sur la POO
@@ -26,8 +27,13 @@ class Question:
         self.bonne_reponse = bonne_reponse
 
     def FromData(data):
-        # ....
-        q = Question(data[2], data[0], data[1])
+        titre = data["titre"]
+        choix = []
+        for c in data["choix"]:
+            choix.append(c[0])
+            if c[1]:
+                bonne_reponse = c[0]
+        q = Question(titre, choix, bonne_reponse)
         return q
 
     def poser(self):
@@ -73,27 +79,20 @@ class Questionnaire:
         return score
 
 
-"""questionnaire = (
-    ("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris"), 
-    ("Quelle est la capitale de l'Italie ?", ("Rome", "Venise", "Pise", "Florence"), "Rome"),
-    ("Quelle est la capitale de la Belgique ?", ("Anvers", "Bruxelles", "Bruges", "Liège"), "Bruxelles")
-                )
+# import of json file
+f = open("questions/animaux_leschats_debutant.json", "r")
+donnees_json = f.read()
+f.close()
 
-lancer_questionnaire(questionnaire)"""
+# deserialisation of json file
+deserial_json = json.loads(donnees_json)
 
-# q1 = Question("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris")
-# q1.poser()
-
-# data = (("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris", "Quelle est la capitale de la France ?")
-# q = Question.FromData(data)
-# print(q.__dict__)
-
-Questionnaire(
-    (
-    Question("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris"), 
-    Question("Quelle est la capitale de l'Italie ?", ("Rome", "Venise", "Pise", "Florence"), "Rome"),
-    Question("Quelle est la capitale de la Belgique ?", ("Anvers", "Bruxelles", "Bruges", "Liège"), "Bruxelles")
-    )
-).lancer()
+# insert the questions in a tupple
+questions = []
+for question in deserial_json["questions"]:
+    questions.append(Question.FromData(question)) #formating the questions via the function FromData
+    
+# Launching the questionnary
+Questionnaire(questions).lancer()
 
 
